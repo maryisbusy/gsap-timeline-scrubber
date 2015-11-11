@@ -1,54 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title></title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-.box-1 {
-    width: 100px;
-    height: 100px;
-    background-color: lightblue;
-    opacity: 0;
-}
-
-.box-2 {
-    width: 100px;
-    height: 100px;
-    background-color: lightgreen;
-    position: absolute;
-    top: 20px;
-    right: 40px;
-}
-
-</style>
-
-</head>
-<body>
-
-<div class="box-1"></div>
-<div class="box-2"></div>
-
-
-<script src="https://cdn.flashtalking.com/frameworks/js/gsap/1.17.0/TweenLite.min.js"></script>
-<script src="https://cdn.flashtalking.com/frameworks/js/gsap/1.17.0/easing/EasePack.min.js"></script>
-<script src="https://cdn.flashtalking.com/frameworks/js/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
-<script src="https://cdn.flashtalking.com/frameworks/js/gsap/1.17.0/TimelineLite.min.js"></script>
-
-<script>
-
-
-var myTimeline = new TimelineLite({paused:true});
-myTimeline.fromTo ('.box-1', 1.5, {opacity:0, scale:5, rotation:-720, x:'+30', y:'-20'}, {opacity:1, scale:1, rotation:0, x:0, y:0});
-
-
-var otherTimeline = new TimelineLite({paused:true});
-otherTimeline.fromTo ('.box-2', 0.5, {rotation: 0, y:20}, {rotation: 45, y:100});
-
-var Scrubber = (function() {
+var TimelineScrubber = (function() {
 
     var scrubberCount = 0,
         cssLoaded = false;
@@ -140,11 +91,3 @@ var Scrubber = (function() {
 
 })();
 
-Scrubber.init(myTimeline);
-Scrubber.init(otherTimeline, 'animation 2');
-
-</script>
-
-
-</body>
-</html>
