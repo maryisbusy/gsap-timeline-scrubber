@@ -11,7 +11,7 @@ var TimelineScrubber = (function() {
         timeline.eventCallback('onUpdate', function() { updateSlider(this, scrubberID); });
 
         injectScrubberCSS();
-        injectScrubberHTML(scrubberID, label);
+        injectScrubberHTML(timeline, scrubberID, label);
         addScrubberEvents(timeline, scrubberID);
     }
 
@@ -61,8 +61,9 @@ var TimelineScrubber = (function() {
         }
     }
 
-    function injectScrubberHTML(scrubberID, label) {
+    function injectScrubberHTML(timeline, scrubberID, label) {
         label = label || 'Timeline';
+        var duration = timeline.duration();
 
         var scrubberHTML = '<div id="scrubber">' +
                 '<h1 class="slider-label" for="slider"> ' + label + '</h1>' +
@@ -74,7 +75,7 @@ var TimelineScrubber = (function() {
                 '<div><input type="range" class="slider" min="0" max="100" value="0"></div>' +
                 '<div>Progress: <span class="progress">0</span>%</div>' +
                 '<div>Time: <span class="time">0.00</span>s</div>' +
-                '<div>Duration: <span class="duration">0.00</span>s</div>' +
+                '<div>Duration: <span class="duration">' + duration + '</span>s</div>' +
             '</div>';
 
         var scrubberWrapper = document.createElement('div');
