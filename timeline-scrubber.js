@@ -17,7 +17,6 @@ var TimelineScrubber = (function() {
 
     function addScrubberEvents(timeline, scrubberID) {
         var scrubber = document.getElementById(scrubberID);
-        scrubber.getElementsByClassName('duration')[0].innerHTML = timeline.duration();
 
         scrubber.getElementsByClassName('play')[0].addEventListener('click',function() {
             if (timeline.progress() !== 1) {
