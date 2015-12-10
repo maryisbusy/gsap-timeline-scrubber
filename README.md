@@ -1,7 +1,7 @@
 # GSAP Timeline Scrubber
 Inject a scrubber for testing GSAP animation timelines
 
-Usage: `TimelineScrubber( timeline [,label] );`
+Usage: `TimelineScrubber.init( timeline [, label] );`
 
 Example:
 
