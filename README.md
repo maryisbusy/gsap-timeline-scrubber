@@ -6,5 +6,5 @@ Usage: `TimelineScrubber( timeline [,label] );`
 Example:
 
     var myTimeline = new TimelineLite();
-    TimelineScrubber(myTimeline, "My Animation");
+    TimelineScrubber.init(myTimeline, "My Animation");
 
