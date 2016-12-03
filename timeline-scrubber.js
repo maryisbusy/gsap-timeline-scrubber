@@ -1,3 +1,8 @@
+/*
+    GSAP Timeline Scrubber
+    by Mary Mattern
+    modeled after http://greensock.com/sequence-video
+*/
 
 var TimelineScrubber = (function() {
 
@@ -48,10 +53,10 @@ var TimelineScrubber = (function() {
     function injectScrubberCSS() {
         if (!cssLoaded) {
             var scrubberCSS = '' +
-                '#scrubber         { margin: 20px 10px; z-index: 9999; position: relative; }' +
-                '#scrubber h1      { font-size: 110%; text-transform: uppercase; }' +
-                '#scrubber button  { padding: 10px; margin-right: 10px; }' +
-                '#scrubber .slider { margin: 20px 0; width: 500px; }';
+                '.gts-scrubber         { margin: 20px 10px; z-index: 9999; position: relative; }' +
+                '.gts-scrubber h1      { font-size: 110%; text-transform: uppercase; }' +
+                '.gts-scrubber button  { padding: 10px; margin-right: 10px; }' +
+                '.gts-scrubber .slider { margin: 20px 0; width: 500px; }';
 
             var styles = document.createElement('style');
             styles.appendChild(document.createTextNode(scrubberCSS));
@@ -64,7 +69,7 @@ var TimelineScrubber = (function() {
         label = label || 'Timeline';
         var duration = timeline.duration();
 
-        var scrubberHTML = '<div id="scrubber">' +
+        var scrubberHTML = '<div class="gts-scrubber">' +
                 '<h1 class="slider-label" for="slider"> ' + label + '</h1>' +
                 '<button class="play">play</button>' +
                 '<button class="pause">pause</button>' +
